@@ -1,0 +1,76 @@
+CPU//
+Governor CLUSTER1: Conservative
+"".      CLUSTER2: Conservative
+
+Governor settings:
+CLUSTER1(little): down_treshold = 60
+                  up_treshold = 80
+CLUSTER1(Big)   : down_treshold = 30
+                  up_treshold = 80
+
+Input Boost:
+0:0 1:0 2:4800000 3:0
+time: 40ms
+
+Other cpu settings:
+wq_power_saving: true
+sched_window_stats_policy: 2
+wakeup_load_thrshld: 110
+wake_to_idle:0
+upmigrate_min_nice: 15
+upmigrate: 95
+spill_nr_run: 3
+spill_load: 100
+small_wakee_task_load: 10
+select_prev_cpu_us: 2000
+rt_runtime_us:950000
+sched_rt_period_us: 1000000
+rr_timeslice_ms: 9
+restrict_cluster_spill: 0
+ravg_his_size: 5
+prefer_sync: 1
+pred_alert_freq: 10485760
+new_task_windows: 5
+init_task_load: 100
+freq_inc: 400000
+freq_dec; 400000
+freq_aggregate_thrshld: 110
+freq_aggregate: 1
+thread_grouping: 0
+collocation: 1
+downmigrate: 9
+cpu_high_irqload: 10000000
+child_first: 0
+boost: 0
+big_waker_task_load: 50
+
+Thermal//
+Any thermal works fine ( don't exceed 85°)
+
+I/O Scheduler//
+Scheduler: deadline
+read_ahead: 128
+
+deadline settings: writes_starved 2
+                   writes_starved 50000
+                   front_merges: (Either enabled or not, enabled preffered)
+                   fifo_batch: 64
+RAM//
+Foreground: 72MB
+Visible; 90MB
+Secondary: 108MB
+Hidden: 126MB
+Providers: 216MB
+Empty: 315MB
+
+zram: enabled,512MB,lz4,60
+
+dirty: 20
+dirty_background: 5
+min_free: 6596 kbytes
+cache_pressure: 100
+overcommit: 50
+
+ENTROPY//
+read: 64
+write: 896
