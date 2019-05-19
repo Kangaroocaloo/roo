@@ -38,7 +38,7 @@ freq_aggregate_thrshld: 110
 freq_aggregate: 1
 thread_grouping: 0
 collocation: 1
-downmigrate: 9
+downmigrate: 90
 cpu_high_irqload: 10000000
 child_first: 0
 boost: 0
