@@ -3,10 +3,12 @@ Governor CLUSTER1: Conservative or Sched_util(interactive)
 "".      CLUSTER2: Conservative or Sched_util(interactive)
 
 Governor settings:
-CLUSTER1.conservative(little): down_treshold = 60
+CLUSTER1(little).conservative: down_treshold = 60
                   up_treshold = 80
+                  delay:60000u  
 CLUSTER1(Big).conservative: down_treshold = 30
                   up_treshold = 80
+                  delay = 200000u
 
 Input Boost:
 0:0 1:0 2:806000 3:0
