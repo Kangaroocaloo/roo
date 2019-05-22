@@ -3,28 +3,30 @@ Governor CLUSTER1: Conservative or Sched_util(interactive)
 "".      CLUSTER2: Conservative or Sched_util(interactive)
 
 Governor settings:
-CLUSTER1(little).conservative: down_treshold = 60
-                  up_treshold = 80
+CLUSTER1(little).conservative :
+                  down_treshold = 35
+                  up_treshold = 99
+                  frequency_step = 4
                   delay:60000u  
-CLUSTER1(Big).conservative: down_treshold = 30
-                  up_treshold = 80
+CLUSTER1(Big).conservative: 
+                  down_treshold = 55
+                  up_treshold = 99
                   delay = 200000u
 
 Input Boost:
 0:0 1:0 2:806000 3:0
-time: 40ms
+time: 20ms
 
 Thermal//
 Any thermal works fine ( don't exceed 85°)
 
 I/O Scheduler//
 Scheduler: deadline OR fiops OR fifo
+read_ahead: 640kb
 
-read_ahead: 128kb
-
-deadline settings: writes_starved: 2
-                   writes_buffer: 500
-                   read_buffer:1000
+deadline settings: writes_starved: 0
+                   writes_buffer: 514
+                   read_buffer:1027
                    front_merges: (Either enabled or not, enabled preffered)
                    fifo_batch: 64
 
