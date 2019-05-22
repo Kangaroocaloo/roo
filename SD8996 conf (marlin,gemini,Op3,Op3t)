@@ -22,15 +22,16 @@ Scheduler: deadline OR fiops OR fifo
 
 read_ahead: 128kb
 
-deadline settings: writes_starved 2
-                   writes_starved 50000
+deadline settings: writes_starved: 2
+                   writes_buffer: 500
+                   read_buffer:1000
                    front_merges: (Either enabled or not, enabled preffered)
                    fifo_batch: 64
 
 fiops settings: async_scale 16
-                sync_scale 6
-                read_scale 6
-                write_scale 8
+                sync_scale 8
+                read_scale 2
+                write_scale 2
                  
 RAM//
 Foreground: 72MB
@@ -48,6 +49,7 @@ dirty_background: 5
 min_free: 6596 kbytes
 cache_pressure: 100
 overcommit: 50
+swappiness: 40
 
 zram.other: disabled.
 
