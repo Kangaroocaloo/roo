@@ -15,7 +15,7 @@ CLUSTER1(big).conservative:
                   seq_delay = 66666u
 
 Input Boost:
-0:0 1:0 2:806000 3:0
+0:800000 1:800000 2:806000 3:806000
 time: 20ms
 
 Thermal//
