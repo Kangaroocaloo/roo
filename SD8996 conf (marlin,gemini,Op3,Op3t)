@@ -1,18 +1,36 @@
 CPU//
-Governor CLUSTER1: Conservative or Sched_util(interactive)
-"".      CLUSTER2: Conservative or Sched_util(interactive)
+Governor CLUSTER1: Conservative or Sched_util(interactive) or Chill
+"".      CLUSTER2: Conservative or Sched_util(interactive) or Chill
 
 Governor settings:
-CLUSTER1(LITTLE).conservative :
+CONSERVATIVE{
+CLUSTER1(LITTLE):
                   down_treshold = 20
                   up_treshold = 99
                   frequency_step = 2
                   seq_delay:200000u  
-CLUSTER1(big).conservative: 
+CLUSTER1(big): 
                   down_treshold = 80
                   up_treshold = 99
                   frequency_step = 1
                   seq_delay = 66666u
+}
+CHILL{
+CLUSTER1(LITTLE): boost = disabled
+                  down_treshold = 25
+                  dt_suspended= 75
+                  up_treshold = 80
+                  frequency_step = 4
+                  sampling_rate=20000
+
+CLUSTER1(big):    boost = disabled
+                  down_treshold = 20
+                  dt_suspended= 55
+                  up_treshold = 95
+                  frequency_step = 2
+                  sampling_rate=20000
+
+}
 
 Input Boost:
 0:800000 1:800000 2:806000 3:806000
